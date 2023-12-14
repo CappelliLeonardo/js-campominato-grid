@@ -17,11 +17,22 @@
 
 const buttonInput = document.querySelector('button');
 
-const quadratone = document.querySelector ('.quadratone')
+const quadratone = document.querySelector ('.quadratone');
+
+const diffSelect = document.getElementById('difficulty');
+console.log('diffSelect', diffSelect, typeof diffSelect);
+
+
 
 buttonInput.addEventListener('click', function(){
 
-    for (let i = 1; i <= 100; i++){
+
+    quadratone.innerHTML = '';
+
+
+    
+    const cellNumber = parseInt(diffSelect.value);
+    for (let i = 1; i <= cellNumber; i++){
 
         const square = document.createElement ('div');
 
@@ -37,7 +48,6 @@ buttonInput.addEventListener('click', function(){
         quadratone.append(square);
 
         square.addEventListener('click', function(){
-
 
             this.classList.toggle ('active');
             console.log (this.innerHTML);
